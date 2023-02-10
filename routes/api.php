@@ -22,5 +22,8 @@ use App\Http\Controllers\ApiAuthController;
 Route::get('logout', [ApiAuthController::class, 'logout']);
 
 Route::post('login', [ApiAuthController::class, 'login']);
-Route::get('getData', [ApiAuthController::class, 'getData']);
+Route::get('getData', [ApiAuthController::class, 'getData']);//->middleware(Token::class);
+
+Route::post('jwt', [ApiAuthController::class, 'jwt']);
+Route::get('decode', [ApiAuthController::class, 'decode']);
 
